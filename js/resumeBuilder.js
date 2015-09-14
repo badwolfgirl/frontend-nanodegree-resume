@@ -18,12 +18,12 @@ This is empty on purpose! Your code to build the resume will go here.
 var bio = {
     "name": "Michele Ford",
     "role": "Front-End Developer",
-    "welcomeMsg": "Welcome to my Resume page!",
     "contacts": {
         "email": "michelesford@gmail.com",
         "github": "badwolfgirl",
         "location": "Myrtle Beach"
     },
+    "welcomeMessage": "Welcome to my Resume page!",
     "skills": [
         "HTML",
         "CSS",
@@ -35,7 +35,9 @@ var bio = {
         "Adobe Creative Suite",
         "Sublime Text 2",
         "Microsoft Office"
-    ]
+    ],
+    "biopic" : "images/me.jpg"//,
+    //"display" : 
 };
 
 var education = {
@@ -44,8 +46,8 @@ var education = {
             "name": "Central Conn St Univ",
             "location": "New Britain, CT",
             "degree": "BA",
-            "major": "Graphic Design",
-            "graduated": "2005",
+            "majors": ["Graphic Design"],
+            "dates": 2005,
             "url": "http://www.ccsu.edu/"
         }
     ],
@@ -53,19 +55,23 @@ var education = {
         {
             "title": "Intro to HTML and CSS",
             "school": "Udacity",
-            "dates": "August 2015"
+            "dates": "August 2015",
+            "url" : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
         },
         {
-            "title": "Intro to github",
+            "title": "How to Use Git and GitHub",
             "school": "Udacity",
-            "dates": "August 2015"
+            "dates": "August 2015",
+            "url" : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
         },
         {
-            "title": "Intro to JavaScript",
+            "title": "JavaScript Basics",
             "school": "Udacity",
-            "dates": "September 2015"
+            "dates": "September 2015",
+            "url" : "https://www.udacity.com/course/javascript-basics--ud804"
         }
-    ]
+    ]//,
+    //display: function
 };
 
 var work = {
@@ -91,7 +97,8 @@ var work = {
             "dates": "May 2008 - January 2013",
             "description": "Daily responsibilities consisted of web site development and hosting management for various clients. Including basic Informational sites, customized Content Management sites, E-Commerce sites, and some custom web application development. My minor responsibilities included troubleshooting client issues over the phone to fix problems such as e-mail connections. Tasked also with delegating work to remote employee."
         }
-    ]
+    ]//,
+    //display: function
 };
 
 var projects = {
@@ -108,7 +115,8 @@ var projects = {
             "description": "Portfolio",
             "images": "na"
         }
-    ]
+    ]//,
+    //display: function
 };
 
 $("#main").append(work.position);
