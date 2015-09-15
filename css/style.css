@@ -11,7 +11,7 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Ek Mukta', sans-serif;
 }
 
 .clear-fix {
@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #4ddb4d;
   line-height: 48px;
   display: inline;
 }
@@ -34,7 +34,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #4a4a4a;
   line-height: 29px;
   padding: 10px;
 }
@@ -86,7 +86,7 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #009933;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -100,16 +100,16 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #71e271;
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
+.green {
+  background-color: #71e271;
 }
 
-.orange-text {
-  color: #f5ae23;
+.green-text {
+  color: #71e271;
 }
 
 .white-text {
@@ -130,6 +130,7 @@ a {
 /* TODO: Replace with image later */
 #header {
   background-color: #484848;
+  color: #fff;
 }
 
 .flex-box {
@@ -152,7 +153,7 @@ ul {
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+  max-width: 150px;
   display: none;
 }
 
