@@ -21,7 +21,7 @@ var bio = {
     "contacts": {
         "email": "michelesford@gmail.com",
         "github": "badwolfgirl",
-        "location": "Myrtle Beach"
+        "location": "Myrtle Beach, SC"
     },
     "welcomeMessage": "Welcome to my Resume page!",
     "skills": [
@@ -79,7 +79,10 @@ var work = {
         {
             "employer": "Blulo.com Inc.",
             "title": "Lead Web Developer",
-            "location": "home",
+            "location": [
+                "Morehead City, NC", 
+                "Little River, SC"
+            ],
             "dates": "January 2015 - current",
             "description": "Converted older web sites to a Wordpress platform using a base theme for the sites and adjusting them to the clients look and feel. Made changes and fixes to previously designed sites. Minor responsibilities included hosting and domain management."
         },
@@ -102,7 +105,7 @@ var work = {
 };
 
 var projects = {
-    "project": [
+    "projects": [
         {
             "title": "Project 0",
             "dates": "August 2015",
@@ -130,10 +133,10 @@ if(bio.skills.length > 0){
 
 }
 
-// Create WORK EXPERIENCE
-if(work.jobs.length > 0){
+// Create WORK EXPERIENCE FUNCTION
+function displayWork() {
     // for loop for jobs
-    for(job in work.jobs){
+    for(var job in work.jobs){
     // Create Dive for work experience
      $("#workExperience").append(HTMLworkStart);
      // create employer and title vars
@@ -150,7 +153,67 @@ if(work.jobs.length > 0){
      $(".work-entry:last").append(formattedDescription);
     }
 }
+displayWork();
 
-$("#main").append(work.position);
-$("#main").append(education['name']);
+// LOCATION ARRAY FUNCTION
+function locationizer(work_obj){
+    var locationArray = [];
+    // loop all of the locations and create array
+    for (job in work_obj.jobs){
+        var newLocation = work_obj.jobs[job].location;
+        locationArray.push(newLocation);
+    }
+    // return the final array
+    return locationArray;
+}
 
+//project functions
+projects.display = function() {
+    for (project in projects.projects){
+        $("#projects").append(HTMLprojectStart);
+
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+        $(".project-entry:last").append(formattedTitle);
+
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+        $(".project-entry:last").append(formattedDates);
+
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+        $(".project-entry:last").append(formattedDescription);
+
+        if(projects.projects[project].images.length > 0){
+            for(image in projects.projects[project].images) {
+                var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+                $(".project-entry:last").append(formattedImage);
+
+            }
+        }
+
+    }
+}
+projects.display();
+
+// function to change name (does not work)
+function inName(name) {
+    name = name.trim().split(" ");
+    console.log(name);
+    name[1] = name[1].toUpperCase();
+    name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+    return name[0] +" "+ name[1];
+}
+inName("michele ford");
+$("#main").append(internationalizeButton);
+
+
+$("#mapDiv").append(googleMap);
+
+
+// LOGCLICKS FUNCTION
+$(document).click(function(loc) {
+
+ var x = loc.pageX;
+ var y = loc.pageY
+
+ logClicks(x, y);
+
+});
