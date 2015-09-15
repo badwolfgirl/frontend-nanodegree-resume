@@ -2,16 +2,16 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 
-//var name			= "Michele Ford";
-//var role 			="Front-End Developer";
-//var formattedName	= HTMLheaderName.replace("%data%", name);
-//var formattedRole	= HTMLheaderRole.replace("%data%", role);
+var name			= "Michele Ford";
+var role 			="Front-End Developer";
+var formattedName	= HTMLheaderName.replace("%data%", name);
+var formattedRole	= HTMLheaderRole.replace("%data%", role);
 
 //var skills			= ["HTML", "CSS", "JavaScript", "jQuery", "PHP"];
 
 
-//$("#header").prepend(formattedRole);
-//$("#header").prepend(formattedName);
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
 
 //$("#main").append(skills);
 
@@ -119,5 +119,38 @@ var projects = {
     //display: function
 };
 
+if(bio.skills.length > 0){
+
+    $("#header").append(HTMLskillsStart);
+
+    for(skill in bio.skills){
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+        $("#skills").append(formattedSkill);
+    }
+
+}
+
+// Create WORK EXPERIENCE
+if(work.jobs.length > 0){
+    // for loop for jobs
+    for(job in work.jobs){
+    // Create Dive for work experience
+     $("#workExperience").append(HTMLworkStart);
+     // create employer and title vars
+     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+     var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);  
+     var formattedEmployerTitle = formattedEmployer + formattedTitle;
+     // append employer and title vars
+     $(".work-entry:last").append(formattedEmployerTitle);
+     // create and append dates
+     var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+     $(".work-entry:last").append(formattedDates);
+     // create and append description
+     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+     $(".work-entry:last").append(formattedDescription);
+    }
+}
+
 $("#main").append(work.position);
 $("#main").append(education['name']);
+
