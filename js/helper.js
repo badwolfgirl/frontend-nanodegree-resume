@@ -105,8 +105,28 @@ function initializeMap() {
 
   var locations;
 
+  // Used the Styled Map Wizard on the Google Developer page
+  var styles = [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      { "saturation": -50 },
+      { "hue": "#e8f6eb" },
+      { "visibility": "on" }
+    ]
+  },{
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#4a4a4a" }
+    ]
+  },{
+  }
+];
+
   var mapOptions = {
-    disableDefaultUI: true
+    disableDefaultUI: true, // Took out to have zoom features
+    styles: styles,
+    zoomControl: true
   };
 
   /* 
@@ -172,7 +192,8 @@ function initializeMap() {
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+
+      infoWindow.open(map, marker);     
   
     });
 

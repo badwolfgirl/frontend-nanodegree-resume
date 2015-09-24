@@ -11,7 +11,7 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: 'Ek Mukta', sans-serif;
+  font-family: 'Ek Mukta', sans-serif;/* changed font to Ek Mukta*/
 }
 
 .clear-fix {
@@ -103,7 +103,7 @@ a {
   color: #71e271;
   display: none;
 }
-
+/* Changed the orange to a green */
 .green {
   background-color: #71e271;
 }
@@ -116,9 +116,9 @@ a {
   font-weight: bold;
   color: #fff;
 }
-
-.gray {
-  background-color: #f3f3f3;
+/* Changed the gray to a light green */
+.light-green {
+  background-color: #e8f6eb;
   padding-bottom: 10px;
   clear:both;
 }
@@ -202,7 +202,7 @@ span {
 }
 
 #mapDiv {
-  height: 400px;
+  height: 300px;
   width: 100%;
   padding-bottom: 5%;
 }
