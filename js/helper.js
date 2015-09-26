@@ -86,9 +86,14 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
-});
 
+  // Had this code in the resumeBuilder, and realized I needed to added it here.
+  var x = loc.pageX;
+  var y = loc.pageY
+
+  logClicks(x, y);
+
+});
 
 
 /*

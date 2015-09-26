@@ -251,14 +251,3 @@ inName('michele ford');
 $('#main').append(internationalizeButton);
 
 $('#mapDiv').append(googleMap);
-
-
-// LOGCLICKS FUNCTION
-$(document).click(function(loc) {
-
- var x = loc.pageX;
- var y = loc.pageY
-
- logClicks(x, y);
-
-});
