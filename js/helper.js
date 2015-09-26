@@ -43,6 +43,7 @@ var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
+var HTMLuniversity = '<h3>Universities</h3>'; // added universities
 var HTMLschoolName = '<a href="#">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
@@ -124,9 +125,9 @@ function initializeMap() {
 ];
 
   var mapOptions = {
-    disableDefaultUI: true, // Took out to have zoom features
-    styles: styles,
-    zoomControl: true
+    disableDefaultUI: true,
+    styles: styles, // added style
+    zoomControl: true // added zoom control
   };
 
   /* 

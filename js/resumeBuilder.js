@@ -96,7 +96,7 @@ var education = {
     'display' : function() {
         if(education.schools.length){
 
-            $('#education').append(HTMLschoolStart);
+            $('#education').append(HTMLuniversity, HTMLschoolStart);
 
             for (var school in education.schools){
 
@@ -221,7 +221,6 @@ var projects = {
     }
 };
 
-
 bio.display();
 work.display();
 projects.display();
@@ -248,6 +247,7 @@ function inName(name) {
     return name[0] +' '+ name[1];
 }
 inName('michele ford');
+
 $('#main').append(internationalizeButton);
 
 $('#mapDiv').append(googleMap);

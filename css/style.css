@@ -21,8 +21,15 @@ h6 {
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
-}
+  border-bottom: 1px dashed #999;
+  padding: 1% 5% 2%;
+}/* changed the entry styles */
+
+.education-entry:last-child,
+.work-entry:last-child,
+.project-entry:last-child {
+  border-bottom: none;
+}/* changed the last-child styles */
 
 h1 {
   font-size: 40px;
